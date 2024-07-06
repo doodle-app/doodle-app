@@ -1,3 +1,124 @@
+---
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Star } from 'lucide-react';
+
+const reviews = [
+  {
+    title: "I love doodle",
+    body: "This app is so cool so I always draw in it so can just have fun From lily",
+    author: "El Markos",
+    rating: 5,
+  },
+  {
+    title: "Amazing App!",
+    body: "My grandchildren love using this app. It especially is great with Apple Pencil. I would definitely recommend downloading Doodle!",
+    author: "Ranger Rog15",
+    rating: 5,
+  },
+  {
+    title: "Dear Doodle",
+    body: "Wanted to Say that thx you for making a app of when people can color and use their imagination when using this app!",
+    author: "Kaylee Elmore",
+    rating: 5,
+  },
+  {
+    title: "Just what I was looking for!",
+    body: "This app is simple and straightforward but with a lot of options. It’s just what I wanted and it’s great for me and perfect for toddlers!",
+    author: "Leffsa",
+    rating: 5,
+  },
+  {
+    title: "keeps my kid busy",
+    body: "Good app for active kid. Kills the boredom moment. For me I use it as a sticky note type and save it.",
+    author: "Cosco Buyer",
+    rating: 5,
+  },
+  {
+    title: "Great!!! I luv!",
+    body: "It is very nice i get to practice with my handwriting and be creative all I want to!!",
+    author: "honey shwety",
+    rating: 5,
+  },
+  {
+    title: "Wish I could give 6 stars",
+    body: "No adds I love it",
+    author: "MammaJla",
+    rating: 5,
+  },
+  {
+    title: "Thank you",
+    body: "This is such a good doodle pad I love it,",
+    author: "anna warken",
+    rating: 5,
+  },
+  {
+    title: "Best thing ever",
+    body: "It is the best thing ever",
+    author: "Bollywoodpk",
+    rating: 5,
+  },
+  {
+    title: "Amazing app",
+    body: "Such a wonderful app. I would recommend it 100%!! Easy to use and works great :)",
+    author: "_xxRandom_Reviewerxx_",
+    rating: 5,
+  },
+  {
+    title: "Great app",
+    body: "Very useful for drawing diagrams while using my iPad. The color selection and ease of use are extremely convenient.",
+    author: "Ira GELLER",
+    rating: 5,
+  },
+  {
+    title: "So good!",
+    body: "I LOVE THIS GAME BECAUSE I CAN SAVE AND SHARE NOW I CAN BE A ARTIST",
+    author: "cacav4",
+    rating: 5,
+  },
+  {
+    title: "Quilting",
+    body: "I’m a longarmer and I use Doodle to practice my stitches.",
+    author: "Quilt restorer",
+    rating: 5,
+  },
+  {
+    title: "Doodle",
+    body: "This is the best app I use it for my kids when we’re on the go so we don’t have to mess with the crayons and I really recommend this app it’s a lifesaver😀👍",
+    author: "bshcjsj",
+    rating: 5,
+  },
+];
+
+---
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/scroll-carousel@1.2.7/dist/scroll.carousel.min.js"></script>
 <section>
     <p>Reviews</p>
+
+    <div class="my-carousel"  data-carousel='{"speed": 1, "autoplay": true, "autoplaySpeed": 1, "smartSpeed": true}'>
+      {reviews.map((review) => (
+        <Card className="mx-4 w-96">
+        <CardHeader>
+            <CardTitle>{review.title}</CardTitle>
+            <CardDescription>
+                                <div class="flex">
+            {[...Array(review.rating).keys()].map((index) => (
+                <Star className="fill-yellow-400" />
+        ))}
+                </div>
+                </CardDescription>
+        </CardHeader>
+        <CardContent> {review.body} </CardContent>
+        <CardFooter> {review.author} </CardFooter>
+        </Card>
+      ))}
+    </div>
+
 </section>
