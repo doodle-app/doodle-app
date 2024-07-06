@@ -1,14 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import '@/styles/globals.css'
-import Hero from './landing/Hero.astro';
+import Layout from '@/layouts/Layout.astro';
+
+import Hero from './Hero.astro';
+import Kudos from './Kudos.astro';
+import Features from './Features.astro';
+import Experience from './Experience.astro';
+import Tools from './Tools.astro';
+import Reviews from './Reviews.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Every line tells a story.">
 	<main>
 		<Hero/>
-		<p>Hello</p>
+		<Kudos />
+		<Features />
+		<Experience />
+		<Tools />
+		<Reviews />
 	</main>
 </Layout>
 
