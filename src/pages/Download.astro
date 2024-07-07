@@ -1,0 +1,45 @@
+---
+import SectionHeader from "@/components/doodle/SectionHeader.astro"
+import DesktopcomputerAndMacbookIcon from '@/components/apple/DesktopcomputerAndMacbookIcon';
+import IpadLandscapeAndIphoneIcon from '@/components/apple/IpadLandscapeAndIphoneIcon';
+import VisionProIcon from '@/components/apple/VisionProIcon';
+
+var download = [
+    {
+        title: "iPhone/iPad",
+        link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=ios",
+        icon: IpadLandscapeAndIphoneIcon,
+                color: "bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400",
+    },
+    {
+        title: "iMac/Macbook",
+        link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=macos",
+        icon: DesktopcomputerAndMacbookIcon,
+                color: "bg-gradient-to-r from-red-400 via-rose-400 to-pink-400",
+    },
+    {
+        title: "Vision Pro",
+        link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=vision",
+        icon: VisionProIcon,
+                color: "bg-gradient-to-r from-fuchsia-400 via-purple-400 to-violet-400",
+    }
+]
+---
+
+
+<section class="mx-auto mt-32 max-w-7xl px-6">
+    <SectionHeader heading="Download" subheading="Join over 2 million artists " />
+    <div class="grid grid-cols-3 gap-8 mt-8">
+        {download.map((download, index) => (
+            <a href={download.link} target="_blank" rel="noopener noreferrer" class={`flex items-center justify-center p-4 ${download.color} rounded-3xl hover:shadow-xl transition duration-300 ease-in-out`}>
+                <div class="flex flex-col items-center justify-center">
+                <download.icon className="w-12 h-12 text-black scale-150" />
+                <span class="ml-4 text-lg font-semibold text-gray-800">{download.title}</span>
+                <img src="/images/apple/appstore.svg" alt="App Store" class="mt-4" />
+
+                </div>
+            </a>
+        ))}
+    </div>
+
+</section>

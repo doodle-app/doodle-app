@@ -16,8 +16,7 @@ import MacbookAndVisionProIcon from '@/components/apple/MacbookAndVisionProIcon'
 import LockShieldIcon from '@/components/apple/LockShieldIcon';
 import RectangleDashedBadgeRecordIcon from '@/components/apple/RectangleDashedBadgeRecordIcon';
 import IcloudIcon from '@/components/apple/IcloudIcon';
-import TextGradientScrollAnimation2 from '@/components/gloz/TextGradientScrollAnimation2';
-
+import SectionHeader from '@/components/doodle/SectionHeader.astro';
 
 const features = [
     {
@@ -73,12 +72,7 @@ const features = [
 ---
 
 <section class="mx-auto mt-32 max-w-7xl px-6">
-    <p>Features</p>
-
-   <div class="py-8">
-      <TextGradientScrollAnimation2 client:load text="Packed with features that create an amazing drawing experience across multiple platfroms."/>
-    </div>
-
+    <SectionHeader heading="Features" subheading="Packed with features that create an amazing drawing experience across multiple platfroms."/>
     <div class="grid grid-cols-2 gap-8">
         {features.map((feature) => (
             <Card className="bg-neutral-950 text-white rounded-3xl border-0 ">

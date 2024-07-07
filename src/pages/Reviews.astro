@@ -1,4 +1,5 @@
 ---
+import SectionHeader from "@/components/doodle/SectionHeader.astro"
 import {
   Card,
   CardContent,
@@ -99,8 +100,10 @@ const reviews = [
 ---
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/scroll-carousel@1.2.7/dist/scroll.carousel.min.js"></script>
-<section>
-    <p>Reviews</p>
+<section  class="mt-32 px-6 my-24"></section>
+    <div class="mx-auto max-w-7xl">
+        <SectionHeader heading="Reviews" subheading="What the cocolest people on the planet are saying about Doodle" />
+    </div>
 
     <div class="my-carousel"  data-carousel='{"speed": 1, "autoplay": true, "autoplaySpeed": 1, "smartSpeed": true}'>
       {reviews.map((review) => (

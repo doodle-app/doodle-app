@@ -6,7 +6,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import TextGradientScrollAnimation from "@/components/gloz/TextGradientScrollAnimation"
-import StaggeredTextAnimation from "@/components/gloz/StaggeredTextAnimation"
+import SectionHeader from "@/components/doodle/SectionHeader.astro"
+
 var tools = [
     {
         name: "Pencil",
@@ -55,7 +56,7 @@ var tools = [
 
 ---
 <section class="mx-auto mt-32 max-w-7xl px-6 my-24">
-    <StaggeredTextAnimation className="justify-center py-8" client:load text="Tools" />
+    <SectionHeader heading="Tools" subheading="Different tools to use while drawing"/>
     <div class="grid grid-cols-9">
         {tools.map((tool) => (
             <Card className="bg-clear text-white border-0">
