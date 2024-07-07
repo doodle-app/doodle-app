@@ -10,18 +10,23 @@ var download = [
         link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=ios",
         icon: IpadLandscapeAndIphoneIcon,
                 color: "bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400",
+                storeImage: "/images/apple/appstore.svg",
     },
     {
         title: "iMac/Macbook",
         link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=macos",
         icon: DesktopcomputerAndMacbookIcon,
                 color: "bg-gradient-to-r from-red-400 via-rose-400 to-pink-400",
+                                storeImage: "/images/apple/macappstore.svg",
+
     },
     {
         title: "Vision Pro",
         link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=vision",
         icon: VisionProIcon,
                 color: "bg-gradient-to-r from-fuchsia-400 via-purple-400 to-violet-400",
+                                storeImage: "/images/apple/appstore.svg",
+
     }
 ]
 ---
@@ -35,7 +40,7 @@ var download = [
                 <div class="flex flex-col items-center justify-center">
                 <download.icon className="w-12 h-12 text-black scale-150" />
                 <span class="ml-4 text-lg font-semibold text-gray-800">{download.title}</span>
-                <img src="/images/apple/appstore.svg" alt="App Store" class="mt-4" />
+                <img src={download.storeImage} alt="App Store" class="mt-4" />
 
                 </div>
             </a>
