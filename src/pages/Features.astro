@@ -1,3 +1,102 @@
-<section>
+---
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+import FamilySharingIcon from '@/components/apple/FamilySharingIcon';
+import ApplePencilIcon from '@/components/apple/ApplePencilIcon';
+import TranslateIcon from '@/components/apple/TranslateIcon';
+import IpadAndIphoneIcon from '@/components/apple/IpadAndIphoneIcon';
+import MacbookAndVisionProIcon from '@/components/apple/MacbookAndVisionProIcon';
+import LockShieldIcon from '@/components/apple/LockShieldIcon';
+import RectangleDashedBadgeRecordIcon from '@/components/apple/RectangleDashedBadgeRecordIcon';
+import IcloudIcon from '@/components/apple/IcloudIcon';
+import TextGradientScrollAnimation2 from '@/components/gloz/TextGradientScrollAnimation2';
+
+
+const features = [
+    {
+        title: 'Family Sharing',
+        description: 'Purcahse once, share with up to 6 family members',
+        icon: FamilySharingIcon,
+        color: "bg-gradient-to-r from-yellow-400 to-amber-400",
+    },
+    {
+        title: 'Apple Pencil',
+        description: 'Use with Apple Pencil for precision drawing and lettering',
+        icon: ApplePencilIcon,
+         color: "bg-gradient-to-r from-amber-400 to-orange-400",
+    },
+
+    {
+        title: 'Always Private & Secure',
+        description: 'No ads, no tracking, no data collection, no accounts, no profiles, no social media, no third-party SDKs, no analytics',
+        icon: LockShieldIcon,
+         color: "bg-gradient-to-r from-orange-400 to-red-400",
+    },
+    {
+        title: '30+ Languages Supported',
+        description: 'Native support for 30+ languages, including RTL languages like Arabic and Hebrew',
+        icon: TranslateIcon,
+         color: "bg-gradient-to-r from-red-400 to-rose-400",
+    },
+    {
+        title: 'Show & Tell',
+        description: 'Record your drawing process and share as a video',
+        icon: RectangleDashedBadgeRecordIcon,
+         color: "bg-gradient-to-r from-rose-400 to-pink-400",
+    },
+    { 
+        title: 'iCloud backup',
+        description: 'Save your work to iCloud and access it on all your devices',
+        icon: IcloudIcon,
+         color: "bg-gradient-to-r from-pink-400 to-fuchsia-400",
+    },
+    {
+        title: 'iOS / iPadOS',
+        description: 'Use doodle on your iPhone and iPad while on the go',
+        icon: IpadAndIphoneIcon,
+         color: "bg-gradient-to-r from-fuchsia-400 to-purple-400",
+    },
+    {
+        title: 'macOS / visionOS',
+        description: 'Use doodle on your Macbook or iMac with Vision Pro while at home',
+        icon: MacbookAndVisionProIcon,
+         color: "bg-gradient-to-r from-purple-400 to-violet-400",
+    },
+]
+---
+
+<section class="mx-auto mt-32 max-w-7xl px-6">
     <p>Features</p>
+
+   <div class="py-8">
+      <TextGradientScrollAnimation2 client:load text="Packed with features that create an amazing drawing experience across multiple platfroms."/>
+    </div>
+
+    <div class="grid grid-cols-2 gap-8">
+        {features.map((feature) => (
+            <Card className="bg-neutral-950 text-white rounded-3xl border-0 ">
+               <div class="p-4">
+                    <div class="flex space-x-4">
+                        <div class={`flex h-16 min-w-16 items-center justify-center rounded-xl ${feature.color} drop-shadow-xl`}>
+                            {feature.icon && <feature.icon className="text-black scale-150" />}
+                            </div>
+                                                                                            <div class="flex flex-col space-y-2">
+                    <CardTitle>
+{feature.title}
+                    </CardTitle>
+                                        <CardDescription>{feature.description}</CardDescription>
+
+                        </div>
+                    </div>
+</div>
+            </Card>
+        ))}
+    </div>
 </section>

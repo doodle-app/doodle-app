@@ -3,11 +3,10 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
+import TextGradientScrollAnimation from "@/components/gloz/TextGradientScrollAnimation"
+import StaggeredTextAnimation from "@/components/gloz/StaggeredTextAnimation"
 var tools = [
     {
         name: "Pencil",
@@ -55,8 +54,8 @@ var tools = [
 ]
 
 ---
-<section class="mx-auto mt-32 max-w-7xl px-6">
-    <p>Tools</p>
+<section class="mx-auto mt-32 max-w-7xl px-6 my-24">
+    <StaggeredTextAnimation className="justify-center py-8" client:load text="Tools" />
     <div class="grid grid-cols-9">
         {tools.map((tool) => (
             <Card className="bg-clear text-white border-0">
@@ -66,10 +65,9 @@ var tools = [
                             <img src={tool.image} alt={tool.name} />
                         </div>
                     </CardTitle>
-                    <CardDescription>{tool.name}</CardDescription>
+                    <TextGradientScrollAnimation className="text-sm font-light justify-center w-full" client:load text={tool.name} />
                 </CardContent>
             </Card>
         ))}
     </div>
 </section>
-

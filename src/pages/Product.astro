@@ -1,5 +1,5 @@
 ---
-import ExperienceCard from "@/components/doodle/ExperienceCard.astro"
+import ProductCard from "@/components/doodle/ProductCard.astro"
 
 const expereinces: Experience[] = [
     {
@@ -20,7 +20,6 @@ const expereinces: Experience[] = [
         description: "Draw Cool Stuff on a Screen",
         thumbnail: "/images/illustrations.png"
     },
-
     {
         id: 4,
         title: "Flowcharts",
@@ -31,14 +30,18 @@ const expereinces: Experience[] = [
         id: 5,
         title: "Lettering",
         description: "Write Cool Stuff",
-        thumbnail: "/images/lettering.png"
+        thumbnail: "/images/product/calligraphy.webp"
     }
 ]
 
 ---
 
 <section class="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
-    <div class="grid grid-cols-1 grid-flow-row-dense lg:grid-cols-6 -mx-2 pt-4">
+    <!-- <div class='mt-[100vh] mb-[65vh]'> -->
+      <!-- <TextGradientScrollAnimation2 text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."/> -->
+    <!-- </div> -->
+
+    <div class="grid grid-cols-1 grid-flow-row-dense lg:grid-cols-6 -mx-2 pt-4 gap-8">
     {expereinces.map((expereince, index) => {
                   let colSpan, rowSpan;
 
@@ -67,7 +70,7 @@ const expereinces: Experience[] = [
               rowSpan = 'row-span-2';
           }
 
-        return <ExperienceCard
+        return <ProductCard
             colSpan={colSpan}
             rowSpan={rowSpan}
             index={index}
