@@ -104,13 +104,13 @@ const reviews = [
 
     <div class="my-carousel"  data-carousel='{"speed": 1, "autoplay": true, "autoplaySpeed": 1, "smartSpeed": true}'>
       {reviews.map((review) => (
-        <Card className="mx-4 w-96">
+        <Card className="mx-4 w-96 bg-neutral-950 text-white rounded-3xl border-0">
         <CardHeader>
             <CardTitle>{review.title}</CardTitle>
             <CardDescription>
                                 <div class="flex">
             {[...Array(review.rating).keys()].map((index) => (
-                <Star className="fill-yellow-400" />
+                <Star className="fill-yellow-400 text-yellow-400" />
         ))}
                 </div>
                 </CardDescription>
