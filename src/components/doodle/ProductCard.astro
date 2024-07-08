@@ -1,6 +1,6 @@
 ---
 interface Props {
-    colSpan: string;
+  colSpan: string;
   rowSpan: string;
   index: number;
   name: string;
@@ -11,42 +11,37 @@ interface Props {
 
 const { colSpan, rowSpan, index, name, description, thumbnail } = Astro.props;
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 ---
 
-        <Card className={`${colSpan} ${rowSpan} aspect-square m-2 rounded-3xl relative overflow-hidden bg-neutral-950 border-0`}>
-      <div
-        class="absolute top-0 w-full h-full bg-cover bg-center transition-all bg-clip-content px-[10%] pt-[10%] pb-[20%] hover:p-0"
-        style={{ backgroundImage: `url(${thumbnail})` }}
-      >
-        <div class="absolute top-0 left-0 w-full h-full grid grid-cols-2 p-4 content-end">
-          <!-- <Typography variant="h5Serif" className="text-white mix-blend-difference"> -->
-           <div class="text-white mix-blend-difference">
-           <p class="text-3xl">
-            {name}
-            </p>
-              {description}
-              </div>
-          <!-- </Typography> -->
-          <div class="text-right">
-            <!-- <Typography variant="h4" className="text-white mix-blend-difference"> -->
-            
-            <!-- </Typography> -->
-            <!-- <Typography variant="smallText" className="text-white mix-blend-difference"> -->
-              <!-- {new Date(createdOn).toLocaleDateString('en-US', {
+<Card
+  className={`${colSpan} ${rowSpan} aspect-square m-2 rounded-3xl relative overflow-hidden bg-neutral-950 border-0`}
+>
+  <div
+    class="absolute top-0 w-full h-full bg-cover bg-center transition-all bg-clip-content px-[10%] pt-[10%] pb-[20%] hover:p-0"
+    style={{ backgroundImage: `url(${thumbnail})` }}
+  >
+    <div class="absolute top-0 left-0 w-full h-full grid grid-cols-2 p-4 content-end">
+      <!-- <Typography variant="h5Serif" className="text-white mix-blend-difference"> -->
+      <div class="text-white mix-blend-difference">
+        <p class="text-3xl">
+          {name}
+        </p>
+        {description}
+      </div>
+      <!-- </Typography> -->
+      <div class="text-right">
+        <!-- <Typography variant="h4" className="text-white mix-blend-difference"> -->
+
+        <!-- </Typography> -->
+        <!-- <Typography variant="smallText" className="text-white mix-blend-difference"> -->
+        <!-- {new Date(createdOn).toLocaleDateString('en-US', {
                 month: 'long',
                 day: 'numeric',
                 year: 'numeric',
               })} -->
-            <!-- </Typography> -->
-          </div>
-        </div>
+        <!-- </Typography> -->
       </div>
-        </Card>
+    </div>
+  </div>
+</Card>

@@ -1,44 +1,35 @@
 "use client";
- 
+
 // This code is part open-source library glozUI: https://ui.gloz.tech
 // Author: @wizsuby
 // Please share the library if it's helpful.
 // Follow the author on Twitter: https://twitter.com/wizsuby
- 
+
 import { cn } from "@/lib/utils";
 import { HTMLAttributes, useEffect, useRef } from "react";
-import {  motion, useAnimation, useInView } from "framer-motion";
- 
+import { motion, useAnimation, useInView } from "framer-motion";
+
 interface StaggeredTextAnimationProps extends HTMLAttributes<HTMLDivElement> {
   text: string;
 }
- 
+
 const textAnimationVarient = {
   hidden: { y: 150 },
   visible: { y: 0 },
 };
- 
-const StaggeredTextAnimation = ({
-  text,
-  className,
-  ...props
-}: StaggeredTextAnimationProps) => {
+
+const StaggeredTextAnimation = ({ text, className, ...props }: StaggeredTextAnimationProps) => {
   const textArray = text.split(" ");
-  const ref = useRef(null)
-  const controls = useAnimation()
-  const inView = useInView(ref)
- 
-  useEffect(()=> {
-    if(inView) controls.start("visible")
-  }, [controls, inView])
- 
- 
+  const ref = useRef(null);
+  const controls = useAnimation();
+  const inView = useInView(ref);
+
+  useEffect(() => {
+    if (inView) controls.start("visible");
+  }, [controls, inView]);
+
   return (
-    <p
-      className={cn("text-9xl font-semibold flex flex-wrap ", className)}
-      ref={ref}
-      {...props}
-    >
+    <p className={cn("text-9xl font-semibold flex flex-wrap ", className)} ref={ref} {...props}>
       {textArray.map((word, workIndex) => (
         <span
           className="
@@ -74,5 +65,5 @@ const StaggeredTextAnimation = ({
     </p>
   );
 };
- 
+
 export default StaggeredTextAnimation;

@@ -1,16 +1,14 @@
 ---
-import StaggeredTextAnimation from "@/components/gloz/StaggeredTextAnimation"
-import TextGradientScrollAnimation2 from '@/components/gloz/TextGradientScrollAnimation2';
+import StaggeredTextAnimation from "@/components/gloz/StaggeredTextAnimation";
+import TextGradientScrollAnimation2 from "@/components/gloz/TextGradientScrollAnimation2";
 
 interface Props {
-    heading: string;
+  heading: string;
   subheading: string;
 }
 
 const { heading, subheading } = Astro.props;
-
 ---
 
 <StaggeredTextAnimation className="justify-center" client:load text={heading} />
-<TextGradientScrollAnimation2 className="justify-center py-16" client:load text={subheading}/>
- 
+<TextGradientScrollAnimation2 className="justify-center py-16" client:load text={subheading} />

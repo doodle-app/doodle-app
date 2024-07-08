@@ -1,74 +1,79 @@
 ---
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardTitle,
-} from "@/components/ui/card"
-import TextGradientScrollAnimation from "@/components/gloz/TextGradientScrollAnimation"
-import SectionHeader from "@/components/doodle/SectionHeader.astro"
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
+import TextGradientScrollAnimation from "@/components/gloz/TextGradientScrollAnimation";
+import SectionHeader from "@/components/doodle/SectionHeader.astro";
 
 var tools = [
-    {
-        name: "Pencil",
-        image: "/images/tools/pencil.png",
-        color: "bg-gradient-to-r from-yellow-400 to-amber-400",
-    },
-    {
-        name: "Pen",
-        image: "/images/tools/pen.png",
-        color: "bg-gradient-to-r from-amber-400 to-orange-400",
-    },
-    {
-        name: "Monoline",
-        image: "/images/tools/monoline.png",
-        color: "bg-gradient-to-r from-orange-400 to-red-400",
-    },
-    {
-        name: "Marker",
-        image: "/images/tools/marker.png",
-        color: "bg-gradient-to-r from-red-400 to-rose-400",
-    },
-    {
-        name: "Fountain Pen",
-        image: "/images/tools/fountain-pen.png",
-        color: "bg-gradient-to-r from-rose-400 to-pink-400",
-    },
-    {
-        name: "Watercolor",
-        image: "/images/tools/watercolor.png",
-        color: "bg-gradient-to-r from-pink-400 to-fuchsia-400",
-    },
-    {
-        name: "Crayon",
-        image: "/images/tools/crayon.png",
-        color: "bg-gradient-to-r from-fuchsia-400 to-purple-400",
-    },    {
-        name: "Eraser",
-        image: "/images/tools/eraser.png",
-        color: "bg-gradient-to-r from-purple-400 to-violet-400",
-    },    {
-        name: "Selection",
-        image: "/images/tools/selection.png",
-        color: "bg-gradient-to-r from-violet-400 to-indigo-400",
-    },
-]
-
+  {
+    name: "Pencil",
+    image: "/images/tools/pencil.png",
+    color: "bg-gradient-to-r from-yellow-400 to-amber-400",
+  },
+  {
+    name: "Pen",
+    image: "/images/tools/pen.png",
+    color: "bg-gradient-to-r from-amber-400 to-orange-400",
+  },
+  {
+    name: "Monoline",
+    image: "/images/tools/monoline.png",
+    color: "bg-gradient-to-r from-orange-400 to-red-400",
+  },
+  {
+    name: "Marker",
+    image: "/images/tools/marker.png",
+    color: "bg-gradient-to-r from-red-400 to-rose-400",
+  },
+  {
+    name: "Fountain Pen",
+    image: "/images/tools/fountain-pen.png",
+    color: "bg-gradient-to-r from-rose-400 to-pink-400",
+  },
+  {
+    name: "Watercolor",
+    image: "/images/tools/watercolor.png",
+    color: "bg-gradient-to-r from-pink-400 to-fuchsia-400",
+  },
+  {
+    name: "Crayon",
+    image: "/images/tools/crayon.png",
+    color: "bg-gradient-to-r from-fuchsia-400 to-purple-400",
+  },
+  {
+    name: "Eraser",
+    image: "/images/tools/eraser.png",
+    color: "bg-gradient-to-r from-purple-400 to-violet-400",
+  },
+  {
+    name: "Selection",
+    image: "/images/tools/selection.png",
+    color: "bg-gradient-to-r from-violet-400 to-indigo-400",
+  },
+];
 ---
+
 <section class="mx-auto mt-32 max-w-7xl px-6 my-24">
-    <SectionHeader heading="Tools" subheading="Different tools to use while drawing"/>
-    <div class="grid grid-cols-9">
-        {tools.map((tool) => (
-            <Card className="bg-clear text-white border-0">
-                <CardContent>
-                    <CardTitle>
-                        <div class={`mb-6 flex h-24 w-24 items-center justify-center rounded-3xl overflow-hidden pt-24 ${tool.color}`}>
-                            <img src={tool.image} alt={tool.name} />
-                        </div>
-                    </CardTitle>
-                    <TextGradientScrollAnimation className="text-sm font-light justify-center w-full" client:load text={tool.name} />
-                </CardContent>
-            </Card>
-        ))}
-    </div>
+  <SectionHeader heading="Tools" subheading="Different tools to use while drawing" />
+  <div class="grid grid-cols-3 lg:grid-cols-9">
+    {
+      tools.map((tool) => (
+        <Card className="bg-clear text-white border-0">
+          <CardContent>
+            <CardTitle className="flex justify-center">
+              <div
+                class={`mb-6 flex h-24 w-24 items-center justify-center rounded-3xl overflow-hidden pt-24 ${tool.color}`}
+              >
+                <img src={tool.image} alt={tool.name} />
+              </div>
+            </CardTitle>
+            <TextGradientScrollAnimation
+              className="flex text-sm font-light justify-center w-full"
+              client:load
+              text={tool.name}
+            />
+          </CardContent>
+        </Card>
+      ))
+    }
+  </div>
 </section>
