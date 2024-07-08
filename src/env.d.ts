@@ -2,6 +2,5 @@
 
 interface Experience {
   title: string
-  description: string
   thumbnail: string
 }

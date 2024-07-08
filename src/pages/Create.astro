@@ -5,40 +5,40 @@ import ProductCard from "@/components/doodle/ProductCard.astro";
 const expereinces: Experience[] = [
   {
     title: "Education",
-    description: "Play Cool Drwaing Games",
-    thumbnail: "/images/product/education.webp",
+    thumbnail: "/images/product/teacher.webp",
   },
   {
-    title: "Lettering",
-    description: "Write Cool Stuff",
-    thumbnail: "/images/product/calligraphy.webp",
+    title: "Traveling",
+    thumbnail: "/images/product/airplane.jpg",
   },
   {
-    title: "Illustrations",
-    description: "Draw Cool Stuff on a Screen",
+    title: "Illustration",
     thumbnail: "/images/illustrations.png",
   },
   {
     title: "Brainstorming",
-    description: "Think of Cool Stuff to Draw",
-    thumbnail: "/images/brainstorming.png",
+    thumbnail: "/images/product/brainstorm.jpg",
   },
-
   {
-    title: "Flowcharts",
-    description: "Make Lines and Boxes ",
-    thumbnail: "/images/flowcharts.png",
+    title: "Lettering",
+    thumbnail: "/images/product/calligraphy.webp",
+  },
+  {
+    title: "Children",
+    thumbnail: "/images/product/children.webp",
   },
 ];
 ---
 
 <section class="mx-auto mt-32 max-w-7xl px-8 sm:mt-56">
-  <SectionHeader heading="Experiences" subheading="Different ways to use the app" />
+  <SectionHeader
+    heading="Endless Creativity"
+    subheading="Explore limitless possibilities with Doodle, perfect for education, travel, note-taking, brainstorming, flowcharts, and stunning illustrations"
+  />
   <div class="grid grid-cols-1 grid-flow-row-dense lg:grid-cols-6 -mx-2 pt-4 gap-8">
     {
       expereinces.map((expereince, index) => {
-        let colSpan = "col-span-1";
-        let rowSpan = "row-span-1";
+        let colSpan, rowSpan;
 
         let effectiveIndex = index;
         if (index % 9 === 8 && index + 1 < expereinces.length) {
@@ -52,17 +52,17 @@ const expereinces: Experience[] = [
           case 1:
           case 5:
           case 6:
-            colSpan = "lg:col-span-3";
-            rowSpan = "lg:row-span-3";
+            colSpan = "col-span-1 lg:col-span-3";
+            rowSpan = "row-span-1 lg:row-span-3";
             break;
           case 2:
           case 9:
-            colSpan = "lg:col-span-4";
-            rowSpan = "lg:row-span-4";
+            colSpan = "col-span-1 lg:col-span-4";
+            rowSpan = "row-span-1 lg:row-span-4";
             break;
           default:
-            colSpan = "lg:col-span-2";
-            rowSpan = "lg:row-span-2";
+            colSpan = "col-span-1 lg:col-span-2";
+            rowSpan = "row-span-1 lg:row-span-2";
         }
 
         return (
