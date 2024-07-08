@@ -21,7 +21,7 @@ const TextGradientScrollAnimation2 = ({ text, className, ...rest }: TextGradient
   return (
     <p
       className={cn(
-        "text-4xl cursor-default max-w-[70rem] leading-tight tracking-tighter font-bold flex flex-wrap",
+        "text-4xl cursor-default leading-tight tracking-tighter font-bold flex flex-wrap",
         className
       )}
       ref={element}

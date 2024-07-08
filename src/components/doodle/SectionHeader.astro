@@ -10,5 +10,5 @@ interface Props {
 const { heading, subheading } = Astro.props;
 ---
 
-<StaggeredTextAnimation className="justify-center" client:load text={heading} />
-<TextGradientScrollAnimation2 className="justify-center py-16" client:load text={subheading} />
+<StaggeredTextAnimation className="justify-center text-7xl" client:load text={heading} />
+<TextGradientScrollAnimation2 className="justify-center text-4xl py-16" client:load text={subheading} />

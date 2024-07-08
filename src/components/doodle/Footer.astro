@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 ---
 
 <footer>
-  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-    <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+  <div class="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8 flex flex-col space-y-10 justify-center">
+    <nav class="mx-auto columns-1 flex flex-col lg:flex-row lg:space-x-12" aria-label="Footer">
       <div class="pb-6">
         <a href="/" class="text-md">Home</a>
       </div>
@@ -17,7 +17,7 @@ import { Button } from "@/components/ui/button";
       </div>
     </nav>
 
-    <div class="mt-10 flex justify-center space-x-10">
+    <div class="flex justify-center space-x-10">
       <Button variant="link">
         <a href="https://x.com/doodle">
           <span class="sr-only">X</span>
@@ -30,8 +30,10 @@ import { Button } from "@/components/ui/button";
       </Button>
     </div>
 
-    <div class="flex justify-center mt-10">
+    <div class="flex justify-center">
       <ModeToggle client:load />
     </div>
+
+    <div class="flex justify-center">2020 - 2024 Doodle. All rights reserved.</div>
   </div>
 </footer>

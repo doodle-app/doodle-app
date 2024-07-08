@@ -18,9 +18,7 @@ const { colSpan, rowSpan, index, name, description, thumbnail } = Astro.props;
 <!-- <FadeInAnimation client:visible class={`${colSpan} ${rowSpan} aspect-square m-2`}> -->
 <div class={`${colSpan} ${rowSpan}`}>
   <FadeInAnimation client:visible>
-    <Card
-      className="aspect-square rounded-3xl relative overflow-hidden bg-neutral-950 border-0"
-    >
+    <Card className="aspect-square rounded-3xl relative overflow-hidden bg-secondary border-0">
       <div
         class="absolute top-0 w-full h-full bg-cover bg-center transition-all bg-clip-content px-[10%] pt-[10%] pb-[20%] hover:p-0"
         style={{ backgroundImage: `url(${thumbnail})` }}

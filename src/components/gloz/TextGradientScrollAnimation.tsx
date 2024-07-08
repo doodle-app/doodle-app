@@ -24,7 +24,7 @@ const TextGradientScrollAnimation = ({ text, className, ...rest }: TextGradientS
 
   return (
     <motion.p
-      className={cn("text-4xl max-w-[70rem] leading-tight tracking-tighter", className)}
+      className={cn("text-4xl leading-tight tracking-tighter", className)}
       ref={element}
       style={{ opacity: scrollYProgress }}
       {...rest}
