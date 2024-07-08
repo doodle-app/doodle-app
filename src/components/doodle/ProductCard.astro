@@ -1,18 +1,16 @@
 ---
 import FadeInAnimation from "@/components/gloz/FadeInAnimation";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card} from "@/components/ui/card";
 
 interface Props {
   colSpan: string;
   rowSpan: string;
-  index: number;
   name: string;
-  description: string;
   createdOn: Date;
   thumbnail: string;
 }
 
-const { colSpan, rowSpan, index, name, description, thumbnail } = Astro.props;
+const { colSpan, rowSpan, name, thumbnail } = Astro.props;
 ---
 
 <div class={`${colSpan} ${rowSpan}`}>
