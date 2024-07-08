@@ -32,13 +32,40 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <!-- Title -->
     <title>{title}</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Every line tells a story." />
+
+    <!-- Meta Keywords -->
+    <meta
+      name="keywords"
+      content="doodle, drawing, classroom, kids, educational, art, educators, teacher, children, child-friendly, learning, illustration, games, lettering, calligraphy, brainstorming, iPad, iPhone, sketch, Photoshop, freeform, paint"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Drawing App: Doodle Pad" />
+    <meta property="og:description" content="Every line tells a story." />
+    <meta property="og:url" content="https://doodle.app" />
+    <meta property="og:site_name" content="doodle.app" />
+    <meta property="og:image" content="/images/open-graph/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Doodle" />
+    <meta property="og:locale" content="en-US" />
+    <meta property="og:type" content="website" />
+
+    <!-- Category -->
+    <meta name="category" content="graphics & design" />
+
+    <!-- Apple iTunes App -->
+    <meta name="apple-itunes-app" content="app-id=1503601939" />
   </head>
-  <body >
+  <body>
     <slot />
-	<Footer />
+    <Footer />
   </body>
 </html>
-¡
