@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import TextGradientScrollAnimation from "@/components/gloz/TextGradientScrollAnimation";
 import SectionHeader from "@/components/doodle/SectionHeader.astro";
+import { motion } from "framer-motion";
 
 var tools = [
   {
@@ -56,23 +57,30 @@ var tools = [
   <SectionHeader heading="Tools" subheading="Different tools to use while drawing" />
   <div class="grid grid-cols-3 lg:grid-cols-9">
     {
-      tools.map((tool) => (
-        <Card className="bg-clear text-white border-0">
-          <CardContent>
-            <CardTitle className="flex justify-center">
-              <div
-                class={`mb-6 flex h-24 w-24 items-center justify-center rounded-3xl overflow-hidden pt-24 ${tool.color}`}
-              >
-                <img src={tool.image} alt={tool.name} />
-              </div>
-            </CardTitle>
-            <TextGradientScrollAnimation
-              className="flex text-sm font-light justify-center w-full"
-              client:load
-              text={tool.name}
-            />
-          </CardContent>
-        </Card>
+      tools.map((tool, index) => (
+        <motion.div
+          client:visible
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { delay: 0.3 + 0.03 * index } }}
+          viewport={{ once: true }}
+        >
+          <Card className="bg-clear text-white border-0">
+            <CardContent>
+              <CardTitle className="flex justify-center">
+                <div
+                  class={`mb-6 flex h-24 w-24 items-center justify-center rounded-3xl overflow-hidden pt-24 ${tool.color}`}
+                >
+                  <img src={tool.image} alt={tool.name} />
+                </div>
+              </CardTitle>
+              <TextGradientScrollAnimation
+                className="flex text-sm font-light justify-center w-full"
+                client:load
+                text={tool.name}
+              />
+            </CardContent>
+          </Card>
+        </motion.div>
       ))
     }
   </div>
