@@ -1,45 +1,43 @@
 ---
-import SectionHeader from "@/components/doodle/SectionHeader.astro"
-import ProductCard from "@/components/doodle/ProductCard.astro"
+import SectionHeader from "@/components/doodle/SectionHeader.astro";
+import ProductCard from "@/components/doodle/ProductCard.astro";
 
 const expereinces: Experience[] = [
-    {
-        title: "Education",
-        description: "Play Cool Drwaing Games",
-        thumbnail: "/images/product/education.webp"
-    },
-    {
-        title: "Lettering",
-        description: "Write Cool Stuff",
-        thumbnail: "/images/product/calligraphy.webp"
-    },
-            {
-        title: "Illustrations",
-        description: "Draw Cool Stuff on a Screen",
-        thumbnail: "/images/illustrations.png"
-    },
-    {
-        title: "Brainstorming",
-        description: "Think of Cool Stuff to Draw",
-        thumbnail: "/images/brainstorming.png"
-    },
+  {
+    title: "Education",
+    description: "Play Cool Drwaing Games",
+    thumbnail: "/images/product/education.webp",
+  },
+  {
+    title: "Lettering",
+    description: "Write Cool Stuff",
+    thumbnail: "/images/product/calligraphy.webp",
+  },
+  {
+    title: "Illustrations",
+    description: "Draw Cool Stuff on a Screen",
+    thumbnail: "/images/illustrations.png",
+  },
+  {
+    title: "Brainstorming",
+    description: "Think of Cool Stuff to Draw",
+    thumbnail: "/images/brainstorming.png",
+  },
 
-    {
-        title: "Flowcharts",
-        description: "Make Lines and Boxes ",
-        thumbnail: "/images/flowcharts.png"
-    },
-
-]
-
+  {
+    title: "Flowcharts",
+    description: "Make Lines and Boxes ",
+    thumbnail: "/images/flowcharts.png",
+  },
+];
 ---
 
 <section class="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
-    <SectionHeader heading="Experiences" subheading="Different ways to use the app"/>
-
+  <SectionHeader heading="Experiences" subheading="Different ways to use the app" />
     <div class="grid grid-cols-1 grid-flow-row-dense lg:grid-cols-6 -mx-2 pt-4 gap-8">
-    {expereinces.map((expereince, index) => {
-                  let colSpan, rowSpan;
+      {
+        expereinces.map((expereince, index) => {
+          let colSpan, rowSpan;
 
           let effectiveIndex = index;
           if (index % 9 === 8 && index + 1 < expereinces.length) {
@@ -53,29 +51,31 @@ const expereinces: Experience[] = [
             case 1:
             case 5:
             case 6:
-              colSpan = 'col-span-3';
-              rowSpan = 'row-span-3';
+              colSpan = "col-span-3";
+              rowSpan = "row-span-3";
               break;
             case 2:
             case 9:
-              colSpan = 'col-span-4';
-              rowSpan = 'row-span-4';
+              colSpan = "col-span-4";
+              rowSpan = "row-span-4";
               break;
             default:
-              colSpan = 'col-span-2';
-              rowSpan = 'row-span-2';
+              colSpan = "col-span-2";
+              rowSpan = "row-span-2";
           }
 
-        return <ProductCard
-            colSpan={colSpan}
-            rowSpan={rowSpan}
-            index={index}
-            name={expereince.title}
-            description={expereince.description}
-            createdOn={new Date()}
-            thumbnail={expereince.thumbnail}
-        />
-        </div>
-    })}
-
+          return (
+            <ProductCard
+              colSpan={colSpan}
+              rowSpan={rowSpan}
+              index={index}
+              name={expereince.title}
+              description={expereince.description}
+              createdOn={new Date()}
+              thumbnail={expereince.thumbnail}
+            />
+          );
+        })
+      }
+    </div>
 </section>

@@ -1,10 +1,4 @@
 "use client";
-
-// This code is part open-source library glozUI: https://ui.gloz.tech
-// Author: @wizsuby
-// Please share the library if it's helpful.
-// Follow the author on Twitter: https://twitter.com/wizsuby
-
 import { cn } from "@/lib/utils";
 import { MotionValue, useScroll, useTransform } from "framer-motion";
 import { HTMLAttributes, ReactNode, useRef } from "react";
@@ -36,9 +30,8 @@ const TextGradientScrollAnimation2 = ({ text, className, ...rest }: TextGradient
       {words.map((word, i) => {
         const start = i / words.length;
         const end = start + 1 / words.length;
-
         return (
-          <Word progress={scrollYProgress} range={[start, end]} key={i}>
+          <Word progress={scrollYProgress} range={[start, end]} key={i} isLast={i === words.length - 1}>
             {word}
           </Word>
         );
@@ -51,15 +44,17 @@ interface WordProps {
   children: ReactNode;
   range: number[];
   progress: MotionValue<number>;
+  isLast: boolean;
 }
 
-const Word = ({ children, progress, range }: WordProps) => {
+const Word = ({ children, progress, range, isLast }: WordProps) => {
   const opacity = useTransform(progress, range, [0.1, 1]);
+
   return (
-    <span>
-      <motion.span style={{ opacity }}>{children}</motion.span>
-      <span>&nbsp;</span>
-    </span>
+    <motion.span style={{ opacity }}>
+      {children}
+      {!isLast && <span>&nbsp;</span>}
+    </motion.span>
   );
 };
 
