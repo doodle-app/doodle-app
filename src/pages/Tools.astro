@@ -59,22 +59,18 @@ var tools = [
     {
       tools.map((tool, index) => (
         <FadeInAnimation client:visible>
-          <Card className="bg-clear text-white border-0">
-            <CardContent>
-              <CardTitle className="flex justify-center">
-                <div
-                  class={`mb-6 flex h-24 w-24 items-center justify-center rounded-3xl overflow-hidden pt-24 ${tool.color}`}
-                >
-                  <img src={tool.image} alt={tool.name} />
-                </div>
-              </CardTitle>
-              <TextGradientScrollAnimation
-                className="flex text-sm font-light justify-center w-full"
-                client:load
-                text={tool.name}
-              />
-            </CardContent>
-          </Card>
+          <div class="flex flex-col justify-center items-center">
+            <div
+              class={`mb-6 flex h-24 w-24 items-center justify-center rounded-3xl overflow-hidden pt-24 ${tool.color}`}
+            >
+              <img src={tool.image} alt={tool.name} />
+            </div>
+            <TextGradientScrollAnimation
+              className="flex text-sm font-light justify-center w-full"
+              client:load
+              text={tool.name}
+            />
+          </div>
         </FadeInAnimation>
       ))
     }
