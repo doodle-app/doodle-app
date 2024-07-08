@@ -1,50 +1,79 @@
 ---
-import SectionHeader from "@/components/doodle/SectionHeader.astro"
-import DesktopcomputerAndMacbookIcon from '@/components/apple/DesktopcomputerAndMacbookIcon';
-import IpadLandscapeAndIphoneIcon from '@/components/apple/IpadLandscapeAndIphoneIcon';
-import VisionProIcon from '@/components/apple/VisionProIcon';
+import SectionHeader from "@/components/doodle/SectionHeader.astro";
+import DesktopcomputerAndMacbookIcon from "@/components/apple/DesktopcomputerAndMacbookIcon";
+import IpadLandscapeAndIphoneIcon from "@/components/apple/IpadLandscapeAndIphoneIcon";
+import VisionProIcon from "@/components/apple/VisionProIcon";
+import WreathHeader from "@/components/doodle/WreathHeader.astro";
+import { Star, StarHalf } from "lucide-react";
 
 var download = [
-    {
-        title: "iPhone/iPad",
-        link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=ios",
-        icon: IpadLandscapeAndIphoneIcon,
-                color: "bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400",
-                storeImage: "/images/apple/appstore.svg",
-    },
-    {
-        title: "iMac/Macbook",
-        link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=macos",
-        icon: DesktopcomputerAndMacbookIcon,
-                color: "bg-gradient-to-r from-red-400 via-rose-400 to-pink-400",
-                                storeImage: "/images/apple/macappstore.svg",
-
-    },
-    {
-        title: "Vision Pro",
-        link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=vision",
-        icon: VisionProIcon,
-                color: "bg-gradient-to-r from-fuchsia-400 via-purple-400 to-violet-400",
-                                storeImage: "/images/apple/appstore.svg",
-
-    }
-]
+  {
+    title: "iPhone/iPad",
+    link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=ios",
+    icon: IpadLandscapeAndIphoneIcon,
+    color: "bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400",
+    storeImage: "/images/apple/appstore.svg",
+  },
+  {
+    title: "iMac/Macbook",
+    link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=macos",
+    icon: DesktopcomputerAndMacbookIcon,
+    color: "bg-gradient-to-r from-red-400 via-rose-400 to-pink-400",
+    storeImage: "/images/apple/macappstore.svg",
+  },
+  {
+    title: "Vision Pro",
+    link: "https://apps.apple.com/us/app/drawing-pad-doodle-draw/id1503601939?platform=vision",
+    icon: VisionProIcon,
+    color: "bg-gradient-to-r from-fuchsia-400 via-purple-400 to-violet-400",
+    storeImage: "/images/apple/appstore.svg",
+  },
+];
 ---
 
-
 <section class="mx-auto mt-32 max-w-7xl px-6">
-    <SectionHeader heading="Download" subheading="Join over 2 million artists " />
-    <div class="grid grid-cols-3 gap-8 mt-8">
-        {download.map((download, index) => (
-            <a href={download.link} target="_blank" rel="noopener noreferrer" class={`flex items-center justify-center p-4 ${download.color} rounded-3xl hover:shadow-xl transition duration-300 ease-in-out`}>
-                <div class="flex flex-col items-center justify-center">
-                <download.icon className="w-12 h-12 text-black scale-150" />
-                <span class="ml-4 text-lg font-semibold text-gray-800">{download.title}</span>
-                <img src={download.storeImage} alt="App Store" class="mt-4" />
+  <SectionHeader heading="Download" subheading="Join over 2 million artists who have experience drawing with Doodle" />
 
-                </div>
-            </a>
-        ))}
-    </div>
+  <div class="grid gird-cols-1 lg:grid-cols-3 gap-8 py-16 justify-center">
+    <WreathHeader>
+      <h2 class="text-2xl font-bold text-white">App Store</h2>
+      <p class="text-xl text-white">App of the Day</p>
+    </WreathHeader>
+    <WreathHeader>
+      <h2 class="text-2xl font-bold text-white">38,000+</h2>
+      <div class="text-xl relative">
+        <div class="flex absolute">
+          {Array.from({ length: 5 }, () => <Star className="w-6 h-6 text-yellow-400" />)}
+        </div>
+        <div class="flex top-0">
+          {Array.from({ length: 4 }, () => <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" />)}
+          <StarHalf className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+        </div>
+      </div>
+      <p class="text-xl text-white">Ratings</p>
+    </WreathHeader>
+    <WreathHeader>
+      <h2 class="text-2xl font-bold text-white">2,000,000+</h2>
+      <p class="text-xl text-white">Downloads</p>
+    </WreathHeader>
+  </div>
 
+  <div class="grid gird-cols-1 lg:grid-cols-3 gap-8 mt-8">
+    {
+      download.map((download, index) => (
+        <a
+          href={download.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={`flex items-center justify-center p-4 ${download.color} rounded-3xl hover:shadow-xl transition duration-300 ease-in-out`}
+        >
+          <div class="flex flex-col items-center justify-center py-10">
+            <download.icon className="w-12 h-12 text-black scale-150" />
+            <span class="ml-4 text-lg font-semibold text-gray-800">{download.title}</span>
+            <img src={download.storeImage} alt="App Store" class="mt-4" />
+          </div>
+        </a>
+      ))
+    }
+  </div>
 </section>
