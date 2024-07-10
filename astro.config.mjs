@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://doodle-app.github.io",
+  site: "https://doodle.app",
   integrations: [
     react(),
     tailwind({
