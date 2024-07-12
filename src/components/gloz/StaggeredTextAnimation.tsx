@@ -59,7 +59,7 @@ const StaggeredTextAnimation = ({ text, className, ...props }: StaggeredTextAnim
               {char}
             </motion.span>
           ))}
-          <span>&nbsp;</span>
+          {!(workIndex == textArray.length - 1) && <span>&nbsp;</span>}
         </span>
       ))}
     </p>
